@@ -3,9 +3,11 @@ import React from 'react'
 this needs to be passed down props which contain the Score
 */
 function Score (props) {
-  score = props.score
+  let score = props.score
   return (
-    <div><h3> Your score is ${score}/10`</h3></div>
+    <div>
+      <h3> Your score is ${score}/10`</h3>
+    </div>
   )
 
 }
