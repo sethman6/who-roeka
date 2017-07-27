@@ -2,8 +2,9 @@ import React from 'react'
 
 const MainPage = () => {
   return (
-    <div><h2>hello</h2></div>
+    <div>
+      <button a href="/quiz/:id" className="start-button">Start Quiz</button>
+    </div>
   )
 }
 export default MainPage
-

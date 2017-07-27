@@ -11294,12 +11294,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var MainPage = function MainPage() {
   return _react2.default.createElement(
-    'div',
+    "div",
     null,
     _react2.default.createElement(
-      'h2',
-      null,
-      'hello'
+      "button",
+      { a: true, href: "/quiz/:id" },
+      "Start Quiz"
     )
   );
 };
