@@ -11265,7 +11265,7 @@ var App = function App() {
             _react2.default.createElement(
                 'h1',
                 null,
-                'Navigating The Taxonomic Rank'
+                'Who-roeka Quiz 2017 Edition'
             ),
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _MainPage2.default })
         )
