@@ -1,10 +1,10 @@
 var React = require('react')
 
-function helloTemplate (props) {
+function Questions (props) {
   return (
     <div>hello {props.name}</div>
   )
 }
 
-export default StartPage
+export default Questions
 
