@@ -11297,11 +11297,6 @@ var MainPage = function MainPage() {
     "div",
     null,
     _react2.default.createElement(
-      "h1",
-      null,
-      "Hello"
-    ),
-    _react2.default.createElement(
       "button",
       { a: true, href: "/quiz/:id" },
       "Start Quiz"
