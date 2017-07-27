@@ -8,17 +8,26 @@ import MainPage from './MainPage'
 // import StartPage from './StartPage'
 // import TextQuestions from './TextQuestions'
 
-const App = () => {
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      score: 0, //pass to score
+      
+    }
+  }
+
+  render() {
     return (
-        <Router>
-            {/* <div className='page'> */}
-            <div className='content'>
-                <h1>Who-roeka Quiz 2017 Edition</h1>
-                <Route exact path='/' component={MainPage} />
-            </div>
-            {/* </div> */}
-        </Router>
+      <Router>
+        <div className='content'>
+          <h1>Who-roeka Quiz 2017 Edition</h1>
+          <Route exact path='/' component={MainPage} />
+        </div>
+     
+      </Router>
     )
+  }
 }
 
 export default App
