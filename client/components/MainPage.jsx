@@ -3,7 +3,7 @@ import React from 'react'
 const MainPage = () => {
   return (
     <div>
-      <button a href="/quiz/:id">Start Quiz</button>
+      <button a href="/quiz/:id" className="start-button">Start Quiz</button>
     </div>
   )
 }
