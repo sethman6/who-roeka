@@ -3,9 +3,10 @@ import React from 'react'
 this needs to be passed down props which contain the Score
 */
 function Score (props) {
-  let score = props.score
+
+  const score = props.score
   return (
-    <div>
+    <div className="scoreBox">
       <h3> Your score is ${score}/10`</h3>
     </div>
   )
