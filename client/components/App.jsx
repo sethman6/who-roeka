@@ -13,7 +13,7 @@ const App = () => {
         <Router>
             {/* <div className='page'> */}
             <div className='content'>
-                <h1>Navigating The Taxonomic Rank</h1>
+                <h1>Who-roeka Quiz 2017 Edition</h1>
                 <Route exact path='/' component={MainPage} />
             </div>
             {/* </div> */}
