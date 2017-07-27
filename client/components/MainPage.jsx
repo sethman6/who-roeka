@@ -1,10 +1,9 @@
-var React = require('react')
+import React from 'react'
 
-function MainPage (props) {
+const MainPage = () => {
   return (
-    <div>hello {props.name}</div>
+    <div><h2>hello</h2></div>
   )
 }
-
 export default MainPage
 

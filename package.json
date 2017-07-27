@@ -17,7 +17,8 @@
   "author": "EDA",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "react-router-dom": "^4.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
