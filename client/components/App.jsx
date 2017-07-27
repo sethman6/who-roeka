@@ -29,13 +29,8 @@ class App extends React.Component {
         { id: 13, question: 'stuff', person: 'nathan' },
         { id: 14, question: 'stuff', person: 'nathan' }
     ],
-      people: [{
-            id: 1,
-            person: 'josh'
-        },
-        {
-            id: 2,
-            person: 'james'
+      people: [{id: 1,person: 'josh'},
+        {id: 2, person: 'james'
         },
         {
             id: 3,
@@ -58,7 +53,11 @@ class App extends React.Component {
             person: 'nathan'
         }
     ],
-    }
+  }
+  this.incrementScore=this.incrementScore.bind(this)
+  }
+  incrementScore(){
+    return this.setState({score: this.state.score+1})
   }
 
   render() {
