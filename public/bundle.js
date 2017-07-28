@@ -11484,97 +11484,9 @@ exports.default = MainPage;
 
 /***/ }),
 /* 100 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(6);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(60);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Questions = function (_React$Component) {
-  _inherits(Questions, _React$Component);
-
-  function Questions(props) {
-    _classCallCheck(this, Questions);
-
-    var _this = _possibleConstructorReturn(this, (Questions.__proto__ || Object.getPrototypeOf(Questions)).call(this, props));
-
-    _this.assessAnswer = _this.assessAnswer.bind(_this);
-    return _this;
-  }
-
-  _createClass(Questions, [{
-    key: 'assessAnswer',
-    value: function assessAnswer(evt) {
-      var selectedAnswer = evt.target.name;
-      var correctAnswer = this.props.question.personId || 1;
-      if (correctAnswer === Number(selectedAnswer)) {
-        this.props.incrementScore();
-      }
-      var nextqid = Number(this.props.match.params.qid) + 1;
-      if (this.props.numQuestions < nextqid) {
-        this.props.history.push('/quiz/' + nextqid);
-      } else {
-        this.props.history.push('/result');
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'question-page' },
-        _react2.default.createElement(
-          'div',
-          { className: 'question' },
-          _react2.default.createElement(
-            'h1',
-            null,
-            'Question: ',
-            this.props.question.question
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'picture-container' },
-          this.props.people.map(function (personObj) {
-            return _react2.default.createElement(
-              'div',
-              { className: 'person-img', key: personObj.id },
-              _react2.default.createElement(
-                'button',
-                { onClick: this.assessAnswer, name: personObj.id },
-                _react2.default.createElement('img', { name: personObj.id, src: '/images/' })
-              )
-            );
-          })
-        )
-      );
-    }
-  }]);
-
-  return Questions;
-}(_react2.default.Component);
-
-exports.default = Questions;
+throw new Error("Module build failed: SyntaxError: Unexpected token, expected ; (22:13)\n\n\u001b[0m \u001b[90m 20 | \u001b[39m    }\n \u001b[90m 21 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 | \u001b[39m    render() {\n \u001b[90m    | \u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 | \u001b[39m        \u001b[36mreturn\u001b[39m (\n \u001b[90m 24 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m'question-page'\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 25 | \u001b[39m                \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m'question'\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n");
 
 /***/ }),
 /* 101 */
@@ -11665,29 +11577,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+	value: true
 });
 var people = exports.people = [{
-    id: 1,
-    person: 'josh'
+	id: 1,
+	img: 'josh'
 }, {
-    id: 2,
-    person: 'james'
+	id: 2,
+	img: 'james'
 }, {
-    id: 3,
-    person: 'emma'
+	id: 3,
+	img: 'emma'
 }, {
-    id: 4,
-    person: 'ali'
+	id: 4,
+	img: 'ali'
 }, {
-    id: 5,
-    person: 'seth'
+	id: 5,
+	img: 'seth'
 }, {
-    id: 6,
-    person: 'max'
+	id: 6,
+	img: 'max'
 }, {
-    id: 7,
-    person: 'nathan'
+	id: 7,
+	img: 'nathan'
 }];
 exports.default = people;
 
