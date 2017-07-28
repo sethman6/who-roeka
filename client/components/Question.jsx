@@ -22,7 +22,6 @@ class Questions extends React.Component {
         } else {
             this.props.history.push('/result')
         }
-
     }
 
     render() {

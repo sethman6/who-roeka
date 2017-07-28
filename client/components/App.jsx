@@ -4,11 +4,11 @@ import {render} from 'react-dom'
 import questions from '../../public/data/questions'
 import people from '../../public/data/people'
 
-// // import FinalPage from './FinalPage'
+import FinalPage from './FinalPage'
 import MainPage from './MainPage'
 import Question from './Question'
-// import StartPage from './StartPage'
-// import TextQuestions from './TextQuestions'
+import StartPage from './StartPage'
+import TextQuestions from './TextQuestions'
 
 class App extends React.Component {
   constructor(props) {
