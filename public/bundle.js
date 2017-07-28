@@ -11316,6 +11316,10 @@ var _people = __webpack_require__(103);
 
 var _people2 = _interopRequireDefault(_people);
 
+var _Score = __webpack_require__(101);
+
+var _Score2 = _interopRequireDefault(_Score);
+
 var _FinalPage = __webpack_require__(98);
 
 var _FinalPage2 = _interopRequireDefault(_FinalPage);
@@ -11394,7 +11398,7 @@ var App = function (_React$Component) {
             } }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/result',
             render: function render() {
-              _react2.default.createElement(_FinalPage2.default, {
+              return _react2.default.createElement(_FinalPage2.default, {
                 score: _this2.state.score
               });
             } })
@@ -11430,17 +11434,19 @@ var _Score2 = _interopRequireDefault(_Score);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function FinalPage(props) {
-  render(_react2.default.createElement(
+  return _react2.default.createElement(
     'div',
     { className: 'finalPage' },
     _react2.default.createElement(
       'h1',
       null,
-      ' Finnishd '
+      ' Finished '
     ),
-    _react2.default.createElement(_Score2.default, { score: props })
-  ));
+    _react2.default.createElement(_Score2.default, { score: props.score })
+  );
 }
+
+//
 
 exports.default = FinalPage;
 
@@ -11484,9 +11490,101 @@ exports.default = MainPage;
 
 /***/ }),
 /* 100 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Unexpected token, expected ; (22:13)\n\n\u001b[0m \u001b[90m 20 | \u001b[39m    }\n \u001b[90m 21 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 | \u001b[39m    render() {\n \u001b[90m    | \u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 | \u001b[39m        \u001b[36mreturn\u001b[39m (\n \u001b[90m 24 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m'question-page'\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 25 | \u001b[39m                \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m'question'\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(60);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Questions = function (_React$Component) {
+  _inherits(Questions, _React$Component);
+
+  function Questions(props) {
+    _classCallCheck(this, Questions);
+
+    var _this = _possibleConstructorReturn(this, (Questions.__proto__ || Object.getPrototypeOf(Questions)).call(this, props));
+
+    _this.assessAnswer = _this.assessAnswer.bind(_this);
+    return _this;
+  }
+
+  _createClass(Questions, [{
+    key: 'assessAnswer',
+    value: function assessAnswer(evt) {
+      var selectedAnswer = evt.target.name;
+      var correctAnswer = this.props.question.personId || 1;
+      if (correctAnswer === Number(selectedAnswer)) {
+        this.props.incrementScore();
+      }
+      var nextqid = Number(this.props.match.params.qid) + 1;
+      if (this.props.numQuestions < nextqid) {
+        this.props.history.push('/quiz/' + nextqid);
+      } else {
+        this.props.history.push('/result');
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'question-page' },
+        _react2.default.createElement(
+          'div',
+          { className: 'question' },
+          _react2.default.createElement(
+            'h1',
+            null,
+            'Question: ',
+            this.props.question.question
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'picture-container' },
+          this.props.people.map(function (personObj) {
+            var personImg = personObj.img;
+
+            return _react2.default.createElement(
+              'div',
+              { className: 'person-img', key: personObj.id },
+              _react2.default.createElement(
+                'button',
+                { onClick: _this2.assessAnswer, name: personObj.id },
+                _react2.default.createElement('img', { src: '/images/' + personImg + '.png', name: personObj.id })
+              )
+            );
+          })
+        )
+      );
+    }
+  }]);
+
+  return Questions;
+}(_react2.default.Component);
+
+exports.default = Questions;
 
 /***/ }),
 /* 101 */
@@ -11509,6 +11607,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 this needs to be passed down props which contain the Score
 */
 function Score(props) {
+  var score = props.score;
+  console.log(score.score);
   var textArray = ["You know knothing", "Pay more attention plz!", "observant kween", "Get out more wierdo!"];
   var text = "";
   if (score < 4) {
@@ -11522,7 +11622,6 @@ function Score(props) {
   } else {
     console.log("Error in the score component!");
   }
-  var score = props.score;
 
   return _react2.default.createElement(
     "div",
@@ -11530,9 +11629,7 @@ function Score(props) {
     _react2.default.createElement(
       "h3",
       null,
-      "`Your score is $",
-      score,
-      "/10`"
+      "Your score is " + score + "/10"
     ),
     _react2.default.createElement(
       "h4",

@@ -4,6 +4,7 @@ import {render} from 'react-dom'
 import questions from '../../public/data/questions'
 import people from '../../public/data/people'
 
+import Score from './Score'
 import FinalPage from './FinalPage'
 import MainPage from './MainPage'
 import Question from './Question'
@@ -47,10 +48,13 @@ class App extends React.Component {
       }}/>
       <Route path='/result'
       render = {() => {
+        return (
         <FinalPage
           score = {this.state.score}
         />
+      )
       }}/>
+
       </div>
 
       </Router>
