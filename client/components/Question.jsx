@@ -11,16 +11,18 @@ class Questions extends React.Component {
     assessAnswer(evt) {
         const selectedAnswer = evt.target.name
         const correctAnswer = this.props.question.personId || 1
-        if (correctAnswer === Number(selectedAnswer)){
+        if (correctAnswer === Number(selectedAnswer)) {
             this.props.incrementScore()
         }
-        const nextqid = Number(this.props.match.params.qid) +1
-        if(this.props.numQuestions < nextqid){
-            this.props.history.push('/quiz/'+nextqid)
-        } else{
+        console.log(this.props.numQuestions)
+        console.log(this.props.qid)
+        const nextqid = Number(this.props.match.params.qid) + 1
+        if (nextqid < this.props.numQuestions) {
+            this.props.history.push('/quiz/' + nextqid)
+        } else {
             this.props.history.push('/result')
         }
-        
+
     }
 
     render() {
@@ -32,7 +34,7 @@ class Questions extends React.Component {
                 <div className='picture-container'>
                     {this.props.people.map((personObj) => <div className='person-img' key={personObj.id}>
                         <button onClick={this.assessAnswer} name={personObj.id}>
-                            <img src={`/images/${personObj.img}`}name={personObj.id} />
+                            <img src={`/images/${personObj.img}`} name={personObj.id} />
                         </button></div>)}
                 </div>
             </div>
