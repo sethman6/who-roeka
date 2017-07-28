@@ -42,8 +42,9 @@ class App extends React.Component {
           incrementScore={this.incrementScore}
           numQuestions={this.state.questions.length}/>
       }}/>
+      <Route path='/result' render={FinalPage} />
       </div>
-
+      
       </Router>
     )
   }

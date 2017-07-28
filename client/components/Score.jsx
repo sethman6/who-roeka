@@ -19,4 +19,4 @@ function Score (props) {
 
 }
 
-export defaults score
+export default Score
