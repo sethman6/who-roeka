@@ -1,5 +1,11 @@
+
+
 body {
 font-family: sans-serif
+}
+
+#root{
+  text-align: center
 }
 
 h1 {
@@ -16,4 +22,3 @@ color: #009900
   cursor: pointer;
   margin: 4px 2px;
 }
-
