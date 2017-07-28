@@ -4,7 +4,7 @@ import {render} from 'react-dom'
 import questions from '../../public/data/questions'
 import people from '../../public/data/people'
 
-// // import FinalPage from './FinalPage'
+import FinalPage from './FinalPage'
 import MainPage from './MainPage'
 import Question from './Question'
 // import StartPage from './StartPage'
@@ -37,10 +37,19 @@ class App extends React.Component {
         const qid = Number(routerProps.match.params.qid)
         const question = this.state.questions.find((question) => question.id === qid)
         return <Question {...routerProps}
-          people={this.state.people}
-          question={question}
-          incrementScore={this.incrementScore}
-          numQuestions={this.state.questions.length}/>
+        people={this.state.people}
+        question={question}
+        incrementScore={this.incrementScore}
+        numQuestions={this.state.questions.length}/>
+
+
+
+      }}/>
+      <Route path='/result'
+      render = {() => {
+        <FinalPage
+          score = {this.state.score}
+        />
       }}/>
       </div>
 
