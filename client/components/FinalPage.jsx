@@ -6,9 +6,9 @@ function finalPage (props) {
   render(
     <div className="finalPage">
       <h1> Finnishd </h1>
-    <Score {props}/>
+    <Score {...props}/>
     </div>
   )
 }
 
-export defaults finalPage
+export default finalPage
