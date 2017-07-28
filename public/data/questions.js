@@ -10,3 +10,5 @@ export const questions = [
     { id: 9, question: 'Who is licensed to zoom zoom on a motorcycle?', person: 'max', personId: 6 },
     { id: 10, question: 'Who comes from the place where the neolithic revolution ocurred 10 000 years ago?', person: 'ali', personId: 4 }
 ]
+
+export default questions

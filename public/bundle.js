@@ -11308,6 +11308,14 @@ var _reactRouterDom = __webpack_require__(90);
 
 var _reactDom = __webpack_require__(38);
 
+var _questions = __webpack_require__(227);
+
+var _questions2 = _interopRequireDefault(_questions);
+
+var _people = __webpack_require__(228);
+
+var _people2 = _interopRequireDefault(_people);
+
 var _MainPage = __webpack_require__(98);
 
 var _MainPage2 = _interopRequireDefault(_MainPage);
@@ -11324,7 +11332,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import FinalPage from './FinalPage'
+// // import FinalPage from './FinalPage'
 
 
 // import StartPage from './StartPage'
@@ -11340,24 +11348,8 @@ var App = function (_React$Component) {
 
     _this.state = {
       score: 0, //pass to score
-      questions: [{ id: 1, question: 'stuff', person: 'josh', pic1: '#', pic2: '#', pic3: '#', pic4: '#' }, { id: 2, question: 'stuff', person: 'josh' }, { id: 3, question: 'stuff', person: 'james' }, { id: 4, question: 'stuff', person: 'james' }, { id: 5, question: 'stuff', person: 'seth' }, { id: 6, question: 'stuff', person: 'seth' }, { id: 7, question: 'stuff', person: 'emma' }, { id: 8, question: 'stuff', person: 'emma' }, { id: 9, question: 'stuff', person: 'max' }, { id: 10, question: 'stuff', person: 'max' }, { id: 11, question: 'stuff', person: 'ali' }, { id: 12, question: 'stuff', person: 'ali' }, { id: 13, question: 'stuff', person: 'nathan' }, { id: 14, question: 'stuff', person: 'nathan' }],
-      people: [{ id: 1, person: 'josh' }, { id: 2, person: 'james'
-      }, {
-        id: 3,
-        person: 'emma'
-      }, {
-        id: 4,
-        person: 'ali'
-      }, {
-        id: 5,
-        person: 'seth'
-      }, {
-        id: 6,
-        person: 'max'
-      }, {
-        id: 7,
-        person: 'nathan'
-      }]
+      questions: _questions2.default,
+      people: _people2.default
     };
     _this.incrementScore = _this.incrementScore.bind(_this);
     return _this;
@@ -11366,7 +11358,7 @@ var App = function (_React$Component) {
   _createClass(App, [{
     key: 'incrementScore',
     value: function incrementScore() {
-      return this.setState({ score: this.state.score + 1 });
+      this.setState({ score: this.state.score + 1 });
     }
   }, {
     key: 'render',
@@ -11485,7 +11477,7 @@ var Questions = function (_React$Component) {
         value: function assessAnswer(evt) {
             var selectedAnswer = evt.target.name;
             var correctAnswer = this.props.question.personId || 1;
-            if (correctAnswer === selectedAnswer) {
+            if (correctAnswer === Number(selectedAnswer)) {
                 this.props.incrementScore();
             }
             var nextqid = Number(this.props.match.params.qid) + 1;
@@ -11532,26 +11524,6 @@ var Questions = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Questions;
-
-// import React from 'react'
-// import ReactDOM from 'react-dom'
-
-// function OtherBlogs(props) {
-//     console.log(props)
-//     const blogs = props.blogs
-//     return (
-//         <div className='oBlogs'>
-//             <h2> Other blogs </h2>
-//             <div className='otherBlog-item'>
-//             {blogs.map((blog, i)=> <div key={i}> <a href={`${blog.link}`}> {blog.blogTitle} </a> </div>)}
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default OtherBlogs
-
-//state.person.id = true
 
 /***/ }),
 /* 100 */
@@ -25994,6 +25966,54 @@ var valueEqual = function valueEqual(a, b) {
 };
 
 exports.default = valueEqual;
+
+/***/ }),
+/* 227 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var questions = exports.questions = [{ id: 1, question: 'Who does Duke the elderly cat belong to? ', person: 'james', personId: 2 }, { id: 2, question: 'This person spent a night locked in bar', person: 'seth', personId: 5 }, { id: 3, question: 'The father of who was awarded an Emmy?', person: 'emma', personId: 3 }, { id: 4, question: 'Who owns nearly 2 dozen critters of the Superclass Osteichthyes?', person: 'max', personId: 6 }, { id: 5, question: 'Who has been close enough to Chris Hemsworth to touch him?', person: 'josh', personId: 1 }, { id: 6, question: 'This person has eaten various insects', person: 'seth', personId: 5 }, { id: 7, question: 'Who was born on an island in Asia?', person: 'james', personId: 2 }, { id: 8, question: 'This person hates shellfish especially icky oysters', person: 'emma', personId: 3 }, { id: 9, question: 'Who is licensed to zoom zoom on a motorcycle?', person: 'max', personId: 6 }, { id: 10, question: 'Who comes from the place where the neolithic revolution ocurred 10 000 years ago?', person: 'ali', personId: 4 }];
+
+exports.default = questions;
+
+/***/ }),
+/* 228 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var people = exports.people = [{
+    id: 1,
+    person: 'josh'
+}, {
+    id: 2,
+    person: 'james'
+}, {
+    id: 3,
+    person: 'emma'
+}, {
+    id: 4,
+    person: 'ali'
+}, {
+    id: 5,
+    person: 'seth'
+}, {
+    id: 6,
+    person: 'max'
+}, {
+    id: 7,
+    person: 'nathan'
+}];
+exports.default = people;
 
 /***/ })
 /******/ ]);

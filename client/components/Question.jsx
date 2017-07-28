@@ -11,11 +11,16 @@ class Questions extends React.Component {
     assessAnswer(evt) {
         const selectedAnswer = evt.target.name
         const correctAnswer = this.props.question.personId || 1
-        if (correctAnswer === selectedAnswer){
+        if (correctAnswer === Number(selectedAnswer)){
             this.props.incrementScore()
         }
         const nextqid = Number(this.props.match.params.qid) +1
-        this.props.history.push('/quiz/'+nextqid)
+        if(this.props.numQuestions < nextqid){
+            this.props.history.push('/quiz/'+nextqid)
+        } else{
+            this.props.history.push('/result')
+        }
+        
     }
 
     render() {
@@ -36,23 +41,3 @@ class Questions extends React.Component {
 }
 
 export default Questions
-
-// import React from 'react'
-// import ReactDOM from 'react-dom'
-
-// function OtherBlogs(props) {
-//     console.log(props)
-//     const blogs = props.blogs
-//     return (
-//         <div className='oBlogs'>
-//             <h2> Other blogs </h2>
-//             <div className='otherBlog-item'>
-//             {blogs.map((blog, i)=> <div key={i}> <a href={`${blog.link}`}> {blog.blogTitle} </a> </div>)}
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default OtherBlogs
-
-//state.person.id = true
