@@ -31,10 +31,16 @@ class Questions extends React.Component {
                     <h1>Question: {this.props.question.question}</h1>
                 </div>
                 <div className='picture-container'>
-                    {this.props.people.map((personObj) => <div className='person-img' key={personObj.id}>
-                        <button onClick={this.assessAnswer} name={personObj.id}>
-                            <img src={`/images/${personObj.img}`} name={personObj.id} />
-                        </button></div>)}
+                    {this.props.people.map((personObj) => {
+                        const personImg = personObj.img
+
+                        return (
+                            <div className='person-img' key={personObj.id}>
+
+                                <button onClick={this.assessAnswer} name={personObj.id}>
+                                    <img src={`/images/${personImg}.png`} name={personObj.id} />
+                                </button></div>)
+                    })}
                 </div>
             </div>
         )
